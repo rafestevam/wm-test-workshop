@@ -35,10 +35,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-            sh 'export IS_TEST_HOST=' + is_host
-            sh 'export IS_TEST_PORT=' + is_port
+            	//sh 'export IS_TEST_HOST=' + is_host
+            	//sh 'export IS_TEST_PORT=' + is_port
             
-		sh "${env.SAG_HOME}/common/lib/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} deploy"
+				sh "${env.SAG_HOME}/common/lib/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} -DIS_TEST_HOST=${IS_TEST_HOST} -DIS_TEST_PORT=${IS_TEST_PORT} deploy"
             }
         }
 /*
