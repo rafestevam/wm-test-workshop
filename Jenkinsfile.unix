@@ -47,16 +47,15 @@ pipeline {
 *        }
 */
 
-/*	stage('Starting HMG deployment job') {
-*		steps {
-*			build job: 'CIDemoHMG', parameters: [
-*			  [$class: 'StringParameterValue', name: 'IS_TEST_HOST', value: 'localhost'], 
-*			  [$class: 'StringParameterValue', name: 'IS_TEST_PORT', value: '30523'],
-*			  [$class: 'StringParameterValue', name: 'LAST_JOB_NAME', value: '${env.JOB_NAME}']  
-*			]
-*		}
-*	}
-*/
+	stage('Starting HMG deployment job') {
+		steps {
+			build job: 'CIDemoHMG', parameters: [
+			  [$class: 'StringParameterValue', name: 'IS_TEST_HOST', value: 'localhost'], 
+			  [$class: 'StringParameterValue', name: 'IS_TEST_PORT', value: '30523'] 
+			]
+		}
+	}
+
 
     }
 }
