@@ -20,11 +20,11 @@
 
 pipeline {
 
-	environment {
-		is_host = "${IS_TEST_HOST}"
-		is_port = "${IS_TEST_PORT}"
-	}
-
+/*	environment {
+*		is_host = "${IS_TEST_HOST}"
+*		is_port = "${IS_TEST_PORT}"
+*	}
+*/
     agent any 
 
     stages {
@@ -47,15 +47,15 @@ pipeline {
 *        }
 */
 
-	stage('Starting HMG deployment job') {
-		steps {
-			build job: 'CIDemoHMG', parameters: [
-			  [$class: 'StringParameterValue', name: 'IS_TEST_HOST', value: 'localhost'], 
-			  [$class: 'StringParameterValue', name: 'IS_TEST_PORT', value: '30523'] 
-			]
-		}
-	}
-
+/*	stage('Starting HMG deployment job') {
+*		steps {
+*			build job: 'CIDemoHMG', parameters: [
+*			  [$class: 'StringParameterValue', name: 'IS_TEST_HOST', value: 'localhost'], 
+*			  [$class: 'StringParameterValue', name: 'IS_TEST_PORT', value: '30523'] 
+*			]
+*		}
+*	}
+*/
 
     }
 }
